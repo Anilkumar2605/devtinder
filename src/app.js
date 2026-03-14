@@ -2,12 +2,18 @@ const express = require("express");
 
 const app = express();
 
-app.use("/test",(req,res)=>{
-    res.send("Hello from 3000 server")
+app.get("/user",(req,res)=>{
+    res.send("{name: Akshay, age: 30}")
 })
 
-app.use("/hello",(req,res)=>{
-    res.send("Hello")
+
+app.post("/user",(req,res)=>{
+    res.send("Posted sucessfully");
+})
+
+
+app.delete("/user",(req,res)=>{
+    res.send("Deleted sucessfully")
 })
 
 app.listen(3000, ()=>{
